@@ -4,7 +4,7 @@
     	<meta charset="utf-8">
     	<meta name="description" content="This is where your description goes">
     	<meta name="keywords" content="one, two, three">
-
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
 		<title>NASA Picture of The Day</title>
 
 		<!-- external CSS link -->
@@ -14,13 +14,26 @@
 	<body>
         <div class="container">
 			<div class="text">
-				<h1>Astronomy Picture of The Day</h1>
-				<h2>Title</h2>
-				<section class="form">
-					<input type="date" name="date">
-					<button type="button" name="button">SUBMIT</button>
-				</section>
-				<nav class="socials">socials</nav>
+				<header>
+					<h1>Astronomy Picture of The Day</h1>
+					<section class="form">
+						<input type="date" name="date">
+						<button type="button" name="button">SHOW PICTURE</button>
+					</section>
+				</header>
+
+				<div class="content">
+					<h2>Title</h2>
+					<h3>Explanation</h3>
+				</div>
+
+				<nav>
+					<ul class="socials">
+						<li><img src=img/nasa.png class="logo nasa"><a src="https://api.nasa.gov/"></a></li>
+						<li><img src=img/github.png class="logo gh"></li><a src="https://github.com/jennaly"></a><li> 
+						<li><img src=img/twitter.png class="logo twitter"></li><a src="https://twitter.com/jennaly__"></a></li>
+					</ul>
+				</nav>
 			</div>
 
 			<div id="mediaContainer"></div>

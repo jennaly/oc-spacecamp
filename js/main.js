@@ -22,23 +22,33 @@ function showOnDate() {
 
 
 function getData(url) {
-  let container = document.getElementById('mediaContainer');
-  while (container.firstChild) {
-    container.removeChild(container.firstChild);
+  let mediaContainer = document.getElementById('mediaContainer');
+  while (mediaContainer.firstChild) {
+    mediaContainer.removeChild(mediaContainer.firstChild);
   };
   fetch(url) 
     .then(res => res.json())
     .then(data => {
       document.querySelector('h2').innerText = data.title.toUpperCase();
+      document.querySelector('h3').innerText = data.explanation.split('.')[0];
 
       if (data.media_type === 'image') {
-        let img = document.createElement('img');
-        container.appendChild(img);        
-        document.querySelector('img').src = data.hdurl;
+        mediaContainer.appendChild(document.createElement("img")).className = "media";
+        document.querySelector('.media').src = data.hdurl;
+
+
+        // let img = document.createElement('img');
+        // mediaContainer.appendChild(img) ;        
+        // document.querySelector('img').src = data.hdurl;
       } else if (data.media_type === 'video') {
-        let video = document.createElement('iframe');
-        container.appendChild(video);
-        document.querySelector('iframe').src = data.url;
+        mediaContainer.appendChild(document.createElement("img")).className = "media";
+        document.querySelector('.media').src = data.url;
+
+
+
+        // let video = document.createElement('iframe');
+        // mediaContainer.appendChild(video);
+        // document.querySelector('iframe').src = data.url;
       }
     })
     .catch(err => console.log(`error ${err}`));

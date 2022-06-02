@@ -14,22 +14,30 @@
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 0 auto;
   margin-top: 5vh;
   margin-bottom: 5vh;
   width: 95vw;
   height: 90vh;
+
   /* border: 1px solid red; */
 }
 
 .text {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
-  width: 30%;
+  width: 32%;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 #mediaContainer {
   display: flex;
   justify-content: center;
@@ -44,14 +52,54 @@ iframe {
   object-fit: cover;
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+h1,
+h2 {
+  padding-bottom: 1rem;
+}
 
 
+.logo {
+  display: inline-block;
+  padding-right: 1rem;
+}
 
+.socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nasa {
+  width: 4rem;
+  padding-right: 0.5rem;
+}
+
+.gh {
+  width: 3rem;
+  padding-right: 0.8rem;
+}
+
+.twitter {
+  width: 2.5rem;
+}
 /******************************************
 /* TYPOGRAPHY
 /*******************************************/
 h1,
 h2,
+h3,
 button {
   font-family: 'Space Grotesk', sans-serif;
 }
@@ -61,6 +109,40 @@ h1 {
 }
 
 h2 {
-  font-size: 3rem;
-  line-height: 4rem;
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+h3 {
+  font-size: 1rem;
+  line-height: 2rem;
+  padding-right: 3vw;
+}
+
+/******************************************
+/* MEDIA QUERIES
+/*******************************************/
+
+@media all and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* margin-top: 0;
+    margin-bottom: 0; */
+    width: 90vw;
+  }
+  .text {
+    width: 100%;
+  }
+  header {
+    margin-bottom: 2rem;
+  }
+  #mediaContainer {
+    width: 100%;
+  }
+  .socials {
+    display: none;
+  }
+  
 }
