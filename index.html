@@ -5,23 +5,26 @@
     	<meta name="description" content="This is where your description goes">
     	<meta name="keywords" content="one, two, three">
 
-		<title>Title in the tab</title>
+		<title>NASA Picture of The Day</title>
 
 		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-        <div>
-		<h1>Picture of The Day</h1>
-		<input type="date" name="" value="">
-		<button type="button" name="button">Get Media</button>
+        <div class="container">
+			<div class="text">
+				<h1>Astronomy Picture of The Day</h1>
+				<h2>Title</h2>
+				<section class="form">
+					<input type="date" name="date">
+					<button type="button" name="button">SUBMIT</button>
+				</section>
+				<nav class="socials">socials</nav>
+			</div>
 
-		<h2>Title</h2>
-		<div id="mediaContainer">
-        </div>
-		<h3>Explanation</h3>
-        </div>
+			<div id="mediaContainer"></div>
+		</div>
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
