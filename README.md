@@ -9,7 +9,7 @@ An application that shows the user NASA’s Astronomy Picture of the Day (APOD) 
 
 **Tech used:** HTML, CSS, JavaScript
 
-The imagery, title, and description are fetched from <a href="https://api.nasa.gov/">NASA's APOD API</a>. Input from the user is appended to the request URL as a parameter to retrieve data from the specified date. The website layout is built to be responsive with the use of flexbox.
+The imagery, title, and description are fetched from <a href="https://api.nasa.gov/">NASA's APOD API</a>. Input from the user is appended to the request URL as a parameter to retrieve data from the specified date. The website layout is built to be responsive using flexbox.
 
 ## Optimizations
 
