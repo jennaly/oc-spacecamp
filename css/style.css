@@ -20,6 +20,7 @@
   margin-bottom: 5vh;
   width: 95vw;
   height: 90vh;
+  flex-wrap: wrap;
 
   /* border: 1px solid red; */
 }
@@ -125,11 +126,9 @@ h3 {
 
 @media all and (max-width: 767px) {
   .container {
-    flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    /* margin-top: 0;
-    margin-bottom: 0; */
+    flex-wrap: wrap;
     width: 90vw;
   }
   .text {
