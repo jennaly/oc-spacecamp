@@ -29,6 +29,7 @@ function getData(url) {
       setExplanation(data);
       if (data.media_type === 'image') {
         appendImg(data);
+        fullScreen(data.hdurl);
       } else if (data.media_type === 'video') {
         appendVideo(data);
       }
@@ -58,10 +59,28 @@ function removeMedia() {
 function appendImg(data) {
   mediaContainer.appendChild(document.createElement("img")).className = "media";
   document.querySelector('.media').src = data.hdurl;
+  
 }
 
 //makes new iframe element and appends it to parent container
 function appendVideo(data) {
   mediaContainer.appendChild(document.createElement("iframe")).className = "media";
   document.querySelector('.media').src = data.url;
+}
+
+//make picture fullscreen on click event
+const fullPage = document.querySelector('#fullpage');
+
+function fullScreen (src) {
+  document.querySelector('.media').addEventListener('click', function() {
+    fullPage.style.backgroundImage = 'url(' + src + ')';
+    fullPage.style.display = 'block';
+  });
+} 
+
+//exit fullscreen
+fullPage.addEventListener('click', exitFullScreen);
+
+function exitFullScreen() {
+  fullPage.style.display = 'none';
 }
