@@ -3,7 +3,7 @@ An application that shows the user NASA’s Astronomy Picture of the Day (APOD) 
 
 **Link to project:** http://jl-nasapod.netlify.com/
 
-![alt text](https://github.com/jennaly/nasa-apod/blob/main/img/ocspacecamp.gif?raw=true)
+![alt text](https://github.com/jennaly/nasa-apod/blob/main/img/ocspacecamp-min.gif?raw=true)
 
 ## How It's Made:
 
