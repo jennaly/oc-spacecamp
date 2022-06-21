@@ -75,6 +75,7 @@ function fullScreen (src) {
   document.querySelector('.media').addEventListener('click', function() {
     fullPage.style.backgroundImage = 'url(' + src + ')';
     fullPage.style.display = 'block';
+    fullPage.style.overflow = 'hidden';
     document.querySelector('#mediaContainer').style.display = 'none';
   })
 } 
