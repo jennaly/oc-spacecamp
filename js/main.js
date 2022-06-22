@@ -75,8 +75,8 @@ function fullScreen (src) {
   document.querySelector('.media').addEventListener('click', function() {
     fullPage.style.backgroundImage = 'url(' + src + ')';
     fullPage.style.display = 'block';
-    fullPage.style.overflow = 'hidden';
     document.querySelector('#mediaContainer').style.display = 'none';
+    document.querySelector('.container').style.display = 'none'
   })
 } 
 
@@ -85,5 +85,6 @@ fullPage.addEventListener('click', exitFullScreen);
 
 function exitFullScreen() {
   fullPage.style.display = 'none';
+  document.querySelector('.container').style.display = 'flex';
   document.querySelector('#mediaContainer').style.display = 'flex';
 }
