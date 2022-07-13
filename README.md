@@ -1,4 +1,4 @@
-# NASA - Astronomy Picture of The Day
+# Orange County Space Camp
 An application that shows the user NASA’s Astronomy Picture of the Day (APOD) and a short description on the image. Users can also select any day in the past. For certain days, the server may return a video. 
 
 **Link to project:** https://ocspacecamp.netlify.app
