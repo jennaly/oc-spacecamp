@@ -67,8 +67,6 @@ function appendFutureText() {
   document.querySelector('h3').innerText = '';
 }
 
-
-
 //removes image/video from previous fetch
 function removeMedia() {
   let mediaContainer = document.getElementById('mediaContainer');
@@ -81,7 +79,6 @@ function removeMedia() {
 function appendImg(data) {
   mediaContainer.appendChild(document.createElement("img")).className = "media";
   document.querySelector('.media').src = data.hdurl;
-  
 }
 
 //makes new iframe element and appends it to parent container
