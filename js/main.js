@@ -15,8 +15,23 @@ function showToday() {
 function showOnDate() {
   const key =  'g1I9im27OqaDCKBiHQTCnrsCFDLxdUe3mCItapYU';
   const date = document.querySelector('input').value;
+  debugger
+  if (isInTheFuture(date)) {
+    removeMedia();
+    appendFutureText();
+    appendFutureImg();
+    return;
+  }
   const url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${date}`;
   getData(url);
+}
+
+//check if date selected is in the future
+function isInTheFuture(date) {
+  const today = new Date();
+  today.setHours(23, 59, 59, 998); 
+  date = Date.parse(date);
+  return date > today;
 }
 
 //fetches data
@@ -47,6 +62,13 @@ function setExplanation(data) {
   document.querySelector('h3').innerText = data.explanation.split('.')[0] + ".";
 }
 
+function appendFutureText() {
+  document.querySelector('h2').innerText = '';
+  document.querySelector('h3').innerText = '';
+}
+
+
+
 //removes image/video from previous fetch
 function removeMedia() {
   let mediaContainer = document.getElementById('mediaContainer');
@@ -66,6 +88,12 @@ function appendImg(data) {
 function appendVideo(data) {
   mediaContainer.appendChild(document.createElement("iframe")).className = "media";
   document.querySelector('.media').src = data.url;
+}
+
+//appends image for future date selection
+function appendFutureImg() {
+  mediaContainer.appendChild(document.createElement("img")).className = "media";
+  document.querySelector('.media').src = "/img/future-date.png";
 }
 
 //make picture fullscreen on click event
@@ -88,3 +116,4 @@ function exitFullScreen() {
   document.querySelector('.container').style.display = 'flex';
   document.querySelector('#mediaContainer').style.display = 'flex';
 }
+
