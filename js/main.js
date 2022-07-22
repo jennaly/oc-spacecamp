@@ -44,7 +44,7 @@ function setTitle(data) {
 
 //sets the explanation of the picture
 function setExplanation(data) {
-  document.querySelector('h3').innerText = data.explanation.split('.')[0];
+  document.querySelector('h3').innerText = data.explanation.split('.')[0] + ".";
 }
 
 //removes image/video from previous fetch

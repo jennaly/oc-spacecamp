@@ -11,45 +11,74 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
+
+body {
+  display: flex;
+  background-image: url("/img/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+
 .container {
   display: flex;
+  align-self: center;
   flex-direction: row;
   justify-content: space-between;
   margin: 0 auto;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  padding: 2vh;
   width: 95vw;
   height: 90vh;
   flex-wrap: wrap;
-
-  /* border: 1px solid red; */
+  max-width: 1368px;
+  max-height: 1000px;
+  align-items: stretch;
 }
 
 .text {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: column;
   width: 36%;
-  padding-top: 4vh;
-  padding-bottom: 2vh;
+  border: 3px solid rgb(117,186,201);
+  background-color: rgb(35,76,100,.8);
+  border-radius: 30px;
+  padding: 2rem;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* background: rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+  padding: 2rem; */
+  color: white;
+  align-self: center;
 }
 #mediaContainer {
   display: flex;
   justify-content: center;
   width: 60%;
-  height: 100%;
+  border-radius: 30px;
+ 
+}
+
+
+
+
+nav {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+  padding: 2rem;
 }
 
 img,
 iframe {
   width: 100%;
   object-fit: cover;
+  border-radius: 30px;
 }
 
 #fullpage {
@@ -71,11 +100,17 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* background: rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+  padding: 2rem; */
+  color: white;
+  text-align: center;
 }
 
 .form {
   display: flex;
   flex-direction: row;
+  align-self: center;
   
 }
 
@@ -122,8 +157,9 @@ button {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
+  text-shadow: #FC0 1px 0 10px;
 }
 
 h2 {
@@ -141,6 +177,41 @@ h3 {
 /* MEDIA QUERIES
 /*******************************************/
 
+
+@media all and (max-width: 1399px) {
+  .text {
+    justify-content: center;
+  }
+  header {
+    margin-bottom: 2rem;
+  }
+
+}
+@media all and (max-width: 1024px) {
+  .text {
+    border: 0;
+    background-color: transparent;
+    border-radius: 0;
+    margin-top:0;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .container{
+    border: 3px solid rgb(117,186,201);
+    background-color: rgb(35,76,100,.8);
+    border-radius: 30px;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    padding: 2rem;
+    height: auto;
+  }
+  body{
+    background-repeat: repeat-y;
+  }
+  
+
+}
+
 @media all and (max-width: 768px) {
   .text {
     width: 35%;
@@ -156,9 +227,10 @@ h3 {
   }
   .text {
     width: 100%;
+    margin-bottom: 2rem;
   }
   header {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     align-items: center;
   }
   #mediaContainer {
