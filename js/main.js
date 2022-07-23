@@ -3,6 +3,12 @@ showToday();
 
 //shows picture on another date when button is clicked
 document.querySelector('button').addEventListener('click', showOnDate);
+//bind Enter key
+document.querySelector('input').addEventListener('keypress', function(event) {
+  if (event.key === "Enter") {
+    document.querySelector('button').click();
+  }
+});
 
 //shows today's picture
 function showToday() {
