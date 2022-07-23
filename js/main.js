@@ -15,11 +15,11 @@ function showToday() {
 function showOnDate() {
   const key =  'g1I9im27OqaDCKBiHQTCnrsCFDLxdUe3mCItapYU';
   const date = document.querySelector('input').value;
-  debugger
   if (isInTheFuture(date)) {
     removeMedia();
-    appendFutureText();
-    appendFutureImg();
+    genFutureContent();
+    // appendFutureText();
+    // appendFutureImg();
     return;
   }
   const url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${date}`;
@@ -59,12 +59,7 @@ function setTitle(data) {
 
 //sets the explanation of the picture
 function setExplanation(data) {
-  document.querySelector('h3').innerText = data.explanation.split('.')[0] + ".";
-}
-
-function appendFutureText() {
-  document.querySelector('h2').innerText = '';
-  document.querySelector('h3').innerText = '';
+  document.querySelector('p').innerText = data.explanation.split('.')[0] + ".";
 }
 
 //removes image/video from previous fetch
@@ -85,12 +80,6 @@ function appendImg(data) {
 function appendVideo(data) {
   mediaContainer.appendChild(document.createElement("iframe")).className = "media";
   document.querySelector('.media').src = data.url;
-}
-
-//appends image for future date selection
-function appendFutureImg() {
-  mediaContainer.appendChild(document.createElement("img")).className = "media";
-  document.querySelector('.media').src = "/img/future-date.png";
 }
 
 //make picture fullscreen on click event
@@ -114,3 +103,65 @@ function exitFullScreen() {
   document.querySelector('#mediaContainer').style.display = 'flex';
 }
 
+//list of fun facts for edge case: future date selection
+const funFacts = [
+  {
+    fact : "One million Earths could fit inside the sun.",
+    src: "/img/futureContent/earthToSun.png"
+  },
+  {
+    fact : "There is strong evidence indicating that there is running water on Mars.",
+    src: "/img/futureContent/waterOnMars.jpeg"
+  },
+  {
+    fact : "Comets are leftovers from the creation of our solar system about 4.5 billion years ago – they consist of sand, ice and carbon dioxide.",
+    src: "/img/futureContent/comet.png"
+  },
+  {
+    fact : "You wouldn’t be able to walk on Jupiter, Saturn, Uranus or Neptune because they have no solid surface.",
+    src: "/img/futureContent/jovianPlanets.png"
+  },
+  {
+    fact : "If you could fly a plane to Pluto, the trip would take more than 800 years.",
+    src: "/img/futureContent/pluto.png"
+  },
+  {
+    fact : "Scientists estimate there are about 500,000 pieces of space junk today, including fragments from rockets and satellites.",
+    src: "/img/futureContent/spaceJunk.png.png"
+  },
+  {
+    fact : "An asteroid about the size of a car enters Earth’s atmosphere roughly once a year – but it burns up before it reaches us.",
+    src: "/img/futureContent/asteroid.png"
+  },
+  {
+    fact : "There are more stars in the universe than grains of sand on all the beaches on Earth. That’s at least a billion trillion.",
+    src: "/img/futureContent/stars.png"
+  },
+  {
+    fact: "The Apollo astronauts' footprints on the moon could last up to 100 million years.",
+    src: "/img/futureContent/footprint.png"
+  },
+  {
+    fact : "The sunset on Mars appears blue.",
+    src: "/img/futureContent/sunsetOnMars.png"
+  },
+]
+
+//generates content for future date selection by random order
+function genFutureContent() {
+  let funFactIndex = Math.floor(Math.random() * 10);
+  appendFutureText(funFactIndex);
+  appendFutureImg(funFactIndex);
+}
+
+//appends text for future date selection
+function appendFutureText(funFactIndex) {
+  document.querySelector('h2').innerText = "The future has yet to come";
+  document.querySelector('p').innerHTML = `It looks like you've selected a date in the future. We don't have that for you just yet, please select another date. <br> Meanwhile, here's a fun fact: ${funFacts[funFactIndex].fact}`;
+}
+
+//appends image for future date selection
+function appendFutureImg(funFactIndex) {
+  mediaContainer.appendChild(document.createElement("img")).className = "media";
+  document.querySelector('.media').src = funFacts[funFactIndex].src;
+}

@@ -32,7 +32,6 @@ body {
   height: 90vh;
   flex-wrap: wrap;
   max-width: 1368px;
-  max-height: 800px;
 }
 
 .text {
@@ -57,9 +56,8 @@ body {
   display: flex;
   justify-content: center;
   width: 60%;
-  border-radius: 30px;
-  height: 100%;
- 
+  border-radius: 30px; 
+  max-height: 100%;
 }
 
 nav {
@@ -141,7 +139,7 @@ span {
 /*******************************************/
 h1,
 h2,
-h3,
+p,
 span,
 button {
   font-family: 'Space Grotesk', sans-serif;
@@ -158,7 +156,7 @@ h2 {
   line-height: 3rem;
 }
 
-h3 {
+p {
   font-size: 1rem;
   line-height: 2rem;
   padding-right: 3vw;
@@ -240,3 +238,9 @@ h3 {
   
 }
 
+@media all and (min-width: 2560px) {
+  .container {
+    align-self: center;
+    max-height: 800px;
+  }
+}
