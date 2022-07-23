@@ -125,7 +125,7 @@ const funFacts = [
   },
   {
     fact : "You wouldn’t be able to walk on Jupiter, Saturn, Uranus or Neptune because they have no solid surface.",
-    src: "/img/futureContent/jovianPlanets.png"
+    src: "/img/futureContent/jovianPlanets.jpeg"
   },
   {
     fact : "If you could fly a plane to Pluto, the trip would take more than 800 years.",
@@ -133,7 +133,7 @@ const funFacts = [
   },
   {
     fact : "Scientists estimate there are about 500,000 pieces of space junk today, including fragments from rockets and satellites.",
-    src: "/img/futureContent/spaceJunk.png.png"
+    src: "/img/futureContent/spaceJunk.png"
   },
   {
     fact : "An asteroid about the size of a car enters Earth’s atmosphere roughly once a year – but it burns up before it reaches us.",
