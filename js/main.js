@@ -169,5 +169,7 @@ function appendFutureText(funFactIndex) {
 //appends image for future date selection
 function appendFutureImg(funFactIndex) {
   mediaContainer.appendChild(document.createElement("img")).className = "media";
-  document.querySelector('.media').src = funFacts[funFactIndex].src;
+  let imageSrc = funFacts[funFactIndex].src
+  document.querySelector('.media').src = imageSrc;
+  fullScreen(imageSrc);
 }
