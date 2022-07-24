@@ -1,35 +1,70 @@
+const API_KEY =  'g1I9im27OqaDCKBiHQTCnrsCFDLxdUe3mCItapYU';
+const API_URL = `https://api.nasa.gov/planetary/apod`;
+const buttonElement = document.querySelector('button');
+const inputElement = document.querySelector('input');
+
 //shows today's picture onload
-showToday();
+initToday();
 
 //shows picture on another date when button is clicked
-document.querySelector('button').addEventListener('click', showOnDate);
+buttonElement.addEventListener('click', showOnDate);
 //bind Enter key
-document.querySelector('input').addEventListener('keypress', function(event) {
+inputElement.addEventListener('keypress', function(event) {
   if (event.key === "Enter") {
-    document.querySelector('button').click();
+    buttonElement.click();
   }
 });
 
 //shows today's picture
-function showToday() {
-  const key =  'g1I9im27OqaDCKBiHQTCnrsCFDLxdUe3mCItapYU';
-  const url = `https://api.nasa.gov/planetary/apod?api_key=${key}`;
-  getData(url);
+function initToday() {
+  const params = {api_key: API_KEY};
+  getData(API_URL, params).then(data => {
+    setTitle(data);
+    setExplanation(data);
+    if (data.media_type === 'image') {
+      appendImg(data);
+      fullScreen(data.hdurl);
+    } else if (data.media_type === 'video') {
+      appendVideo(data);
+    }
+  });
+}
+//fetches data
+async function getData(url, params) {
+  // removeMedia();
+
+  //api_key = abc and date=abc
+  try {
+    const response = await fetch(`${url}/?${new URLSearchParams(params)}`) 
+    return response.json()
+    }catch (error) {
+      console.log(`error ${error}`)
+    }
 }
 
 //shows picture on specified date
 function showOnDate() {
-  const key =  'g1I9im27OqaDCKBiHQTCnrsCFDLxdUe3mCItapYU';
   const date = document.querySelector('input').value;
   if (isInTheFuture(date)) {
     removeMedia();
     genFutureContent();
-    // appendFutureText();
-    // appendFutureImg();
     return;
   }
-  const url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${date}`;
-  getData(url);
+
+  const params = {
+    api_key: API_KEY,
+    date: date
+  }
+  getData(API_URL, params).then(data => {
+  setTitle(data);
+  setExplanation(data);
+  if (data.media_type === 'image') {
+    appendImg(data);
+    fullScreen(data.hdurl);
+  } else if (data.media_type === 'video') {
+    appendVideo(data);
+  }
+  });
 }
 
 //check if date selected is in the future
@@ -40,23 +75,6 @@ function isInTheFuture(date) {
   return date > today;
 }
 
-//fetches data
-function getData(url) {
-  removeMedia();
-  fetch(url) 
-    .then(res => res.json())
-    .then(data => {
-      setTitle(data);
-      setExplanation(data);
-      if (data.media_type === 'image') {
-        appendImg(data);
-        fullScreen(data.hdurl);
-      } else if (data.media_type === 'video') {
-        appendVideo(data);
-      }
-    })
-    .catch(err => console.log(`error ${err}`));
-}
 
 //sets the title of the picture
 function setTitle(data) {
