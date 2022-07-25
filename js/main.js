@@ -29,10 +29,9 @@ function initToday() {
     }
   });
 }
+
 //fetches data
 async function getData(url, params) {
-  // removeMedia();
-
   //api_key = abc and date=abc
   try {
     const response = await fetch(`${url}/?${new URLSearchParams(params)}`) 
@@ -45,8 +44,8 @@ async function getData(url, params) {
 //shows picture on specified date
 function showOnDate() {
   const date = document.querySelector('input').value;
+  removeMedia();
   if (isInTheFuture(date)) {
-    removeMedia();
     genFutureContent();
     return;
   }

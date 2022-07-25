@@ -8,9 +8,6 @@
   box-sizing: border-box;
 }
 
-/******************************************
-/* LAYOUT
-/*******************************************/
 
 body {
   display: flex;
@@ -40,10 +37,7 @@ body {
   background-color: rgb(35,76,100,.8);
   border-radius: 30px;
   margin-top: 4vh;
-  margin-bottom: 4vh;
-  padding: 2rem;
-  height: auto;
-}
+  margin-bottom: 4vh;}
 
 .text {
   display: flex;
@@ -59,6 +53,7 @@ body {
   justify-content: space-between;
   color: white;
   align-self: center;
+  padding-top: 2rem;
   
 }
 #mediaContainer {
@@ -173,10 +168,6 @@ p {
 /******************************************
 /* MEDIA QUERIES
 /*******************************************/
-
-
-
-
 @media all and (max-width: 1439px) {
   .text {
     justify-content: center;
