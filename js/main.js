@@ -180,7 +180,9 @@ function genFutureContent() {
 //appends text for future date selection
 function appendFutureText(funFactIndex) {
   document.querySelector('h2').innerText = "The future has yet to come";
-  document.querySelector('p').innerHTML = `It looks like you've selected a date in the future. We don't have that for you just yet, please select another date. <br> Meanwhile, here's a fun fact: ${funFacts[funFactIndex].fact}`;
+  document.querySelector('p').innerHTML = "It looks like you've selected a date in the future. We don't have that for you just yet, please select another date.";
+  document.querySelector('.content').appendChild(document.createElement("p")).className = "funFactText";
+  document.querySelector('.funFactText').innerText = `Meanwhile, here's a fun fact: ${funFacts[funFactIndex].fact}`;
 }
 
 //appends image for future date selection
