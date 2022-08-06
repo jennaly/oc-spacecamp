@@ -233,12 +233,6 @@ p {
   
 }
 
-@media all and (min-width: 2560px) {
-  .container {
-    align-self: center;
-    max-height: 1000px;
-  }
-}
 
 @media all and (min-width: 1024px) {
   #mediaContainer {
@@ -247,5 +241,12 @@ p {
   }
   .container {
     height: auto;
+  }
+}
+
+
+@media all and (min-width: 2560px) {
+  .container {
+    align-self: center;
   }
 }
