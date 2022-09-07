@@ -45,6 +45,8 @@ async function getData(url, params) {
 function showOnDate() {
   const date = document.querySelector('input').value;
   removeMedia();
+  removeFunFact();
+
   if (isInTheFuture(date)) {
     genFutureContent();
     return;
@@ -191,4 +193,12 @@ function appendFutureImg(funFactIndex) {
   let imageSrc = funFacts[funFactIndex].src
   document.querySelector('.media').src = imageSrc;
   fullScreen(imageSrc);
+}
+
+//removes fun facts from previously loaded "future content"
+function removeFunFact() {
+  const funFactTexts = document.getElementsByClassName("funFactText");
+  while(funFactTexts.length > 0){
+    funFactTexts[0].parentNode.removeChild(funFactTexts[0]);
+  }
 }
