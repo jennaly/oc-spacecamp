@@ -100,6 +100,11 @@ button:hover {
   color: rgb(255, 252, 252);
 }
 
+a {
+  color: inherit; 
+  text-decoration: inherit;
+}
+
 img,
 iframe {
   width: 100%;
