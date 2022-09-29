@@ -115,6 +115,11 @@ iframe {
   border-radius: 30px;
 }
 
+img:hover,
+iframe:hover {
+  cursor: pointer;
+}
+
 #fullpage {
   display: none;
   position: absolute;
