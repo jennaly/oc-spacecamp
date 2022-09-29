@@ -24,7 +24,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 2vh;
+  padding: 2rem;
   width: 95vw;
   height: auto;
   flex-wrap: wrap;
@@ -139,7 +139,6 @@ header {
   display: flex;
   flex-direction: row;
   align-self: center;
-  width: 80%;
   justify-content: center;
   
 }
