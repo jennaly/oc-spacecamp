@@ -27,12 +27,7 @@ body {
   padding: 2rem;
   width: 95vw;
   height: auto;
-  flex-wrap: wrap;
   max-width: 1368px;
-
-}
-
-.container{
   border: 3px solid rgb(117,186,201);
   background-color: rgb(35,76,100,.8);
   border-radius: 30px;
@@ -74,21 +69,61 @@ nav {
 }
 
 input {
-  padding: 1rem;
   border-radius: 5px;
   margin-right: .5rem;
+  padding: .5rem;
   border: 2px solid rgb(117,186,201);
+  background: rgb(35,76,100,.8);
+  width: 60%
 }
+
+/* Removes the clear button from date inputs */
+input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button { 
+  display: none;
+}
+
+/* Always display the drop down caret */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #2c3e50;
+}
+
+/* A few custom styles for date inputs */
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  color: #95a5a6;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 1rem;
+  border:1px solid rgb(117,186,201);
+  background:rgb(35,76,100,.8);
+  display: inline-block !important;
+  visibility: visible !important;
+  text-align: center;
+  vertical-align: middle;
+}
+
+input[type="date"], focus {
+  color: #FFF;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
 button {
   padding: 0 1rem;
   border-radius: 5px;
   color: #FFF;
   background: rgb(35,76,100,.8);
-  border: 2px solid rgb(117,186,201);
-  border-radius: 5px;
+  border: 1px solid rgb(117,186,201);
+  border-radius: 500px;
   display: inline-block;
   font-family: "Lucida Console", Monaco, monospace;
-  font-size: 14px;
+  font-size: 1rem;
   letter-spacing: 1px;
   cursor: pointer;
   box-shadow: inset 0 0 0 0 #FC0;
@@ -148,7 +183,7 @@ header {
   flex-direction: row;
   align-self: center;
   justify-content: center;
-  
+  width:100%;
 }
 
 h1,
@@ -210,6 +245,11 @@ p {
   line-height: 2rem;
   padding-right: 3vw;
   padding-top: 1rem;
+}
+
+span {
+  font-size: 1.5rem;
+  color:rgba(255, 255, 255, 0.8)
 }
 
 /******************************************
