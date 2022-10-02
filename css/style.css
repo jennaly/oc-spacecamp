@@ -37,7 +37,10 @@ body {
   background-color: rgb(35,76,100,.8);
   border-radius: 30px;
   margin-top: 4vh;
-  margin-bottom: 4vh;}
+  margin-bottom: 4vh;
+  flex-wrap: nowrap;
+}
+  
 
 .text {
   display: flex;
@@ -272,12 +275,9 @@ p {
 
 
 @media all and (min-width: 1024px) {
-  #mediaContainer {
-    max-height: 90%;
-    
-  }
+  
   .container {
-    height: auto;
+    max-height: 90vh;
   }
 }
 
